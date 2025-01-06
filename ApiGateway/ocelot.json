@@ -12,10 +12,11 @@
             "UpstreamPathTemplate": "/foods/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
             "RateLimitOptions": {
-                "ClientId": "client-1",
-                "QuotaExceededMessage": "Rate limit exceeded",
-                "Limit": 5,
-                "Period": "1m"
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "1h",
+                "PeriodTimespan": 5,
+                "Limit": 20
             }
         },
         {
@@ -30,10 +31,11 @@
             "UpstreamPathTemplate": "/students/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
             "RateLimitOptions": {
-                "ClientId": "client-2",
-                "QuotaExceededMessage": "Rate limit exceeded",
-                "Limit": 10,
-                "Period": "1m"
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "1h",
+                "PeriodTimespan": 10,
+                "Limit": 20
             }
         },
         {
@@ -48,14 +50,22 @@
             "UpstreamPathTemplate": "/students/search?course={course}&age={age}&name={name}&email={email}",
             "UpstreamHttpMethod": [ "Get" ],
             "RateLimitOptions": {
-                "ClientId": "client-3",
-                "QuotaExceededMessage": "Rate limit exceeded",
-                "Limit": 5,
-                "Period": "1m"
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "1h",
+                "PeriodTimespan": 10,
+                "Limit": 20
             }
         }
     ],
+
     "GlobalConfiguration": {
-        "BaseUrl": "http://localhost:8080"
+        "BaseUrl": "http://localhost:8080",
+        "RateLimitOptions": {
+            "DisableRateLimitHeaders": false,
+            "QuotaExceededMessage": "Too Many Requests",
+            "HttpStatusCode": 418,
+            "ClientIdHeader": "ClientId"
+        }
     }
 }
