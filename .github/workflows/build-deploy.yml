@@ -1,0 +1,48 @@
+name: Build Image And Compose Up
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build Docker Images and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build and Push Ocelot Gateway Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/ocelot-gateway:latest ./ApiGateway
+          docker push ${{ secrets.DOCKER_USERNAME }}/ocelot-gateway:latest
+
+      - name: Build and Push Food API Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/foodapi:latest ./FoodApi
+          docker push ${{ secrets.DOCKER_USERNAME }}/foodapi:latest
+
+      - name: Build and Push Students API Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/studentsapi:latest ./StudentsApi
+          docker push ${{ secrets.DOCKER_USERNAME }}/studentsapi:latest
+
+      - name: SSH to Server and Deploy Docker Containers
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+            host: ${{ secrets.SERVER_HOST }}
+            username: ${{ secrets.SERVER_USER }}
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSWORD }}
+            port: 22
+            script: |
+                cd ~/ASP-Dotnet-MicroServices-CICD
+                docker-compose down
+                git pull
+                docker-compose pull
+                docker-compose up -d
