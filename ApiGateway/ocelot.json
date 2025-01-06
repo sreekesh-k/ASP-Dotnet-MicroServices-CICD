@@ -5,8 +5,8 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5182
+                    "Host": "foodapi",
+                    "Port": 8080
                 }
             ],
             "UpstreamPathTemplate": "/foods/{everything}",
@@ -24,8 +24,8 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5021
+                    "Host": "studentsapi",
+                    "Port": 8080
                 }
             ],
             "UpstreamPathTemplate": "/students/{everything}",
@@ -43,8 +43,8 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5021
+                    "Host": "studentapi",
+                    "Port": 5002
                 }
             ],
             "UpstreamPathTemplate": "/students/search?course={course}&age={age}&name={name}&email={email}",

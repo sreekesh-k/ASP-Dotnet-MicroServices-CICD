@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  ocelot-gateway:
+    image: sreekesh26/ocelot-gateway:latest
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    networks:
+      - gateway-net
+      - api-net
+    ports:
+      - "8080:8080"
+    depends_on:
+      - foodapi
+      - studentsapi
+
+  foodapi:
+    image: sreekesh26/foodapi:latest
+    build:
+      context: ./FoodApi
+      dockerfile: Dockerfile
+    networks:
+      - api-net
+    ports:
+      - "5001:8080"
+
+  studentsapi:
+    image: sreekesh26/studentsapi:latest
+    build:
+      context: ./StudentsApi
+      dockerfile: Dockerfile
+    networks:
+      - api-net
+    ports:
+      - "5002:8080"
+
+networks:
+  gateway-net:
+    driver: bridge
+  api-net:
+    driver: bridge
