@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodApi.Tests", "FoodApi.Tests\FoodApi.Tests.csproj", "{0D4DAC32-C239-4671-96F4-F95CD66D2344}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsApi.Tests", "StudentsApi.Tests\StudentsApi.Tests.csproj", "{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0D4DAC32-C239-4671-96F4-F95CD66D2344}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D4DAC32-C239-4671-96F4-F95CD66D2344}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D4DAC32-C239-4671-96F4-F95CD66D2344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

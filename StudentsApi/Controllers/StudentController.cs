@@ -16,7 +16,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetStudents()
+        public async Task<IActionResult> GetStudents()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStudent(int id)
+        public async Task<IActionResult> GetStudent(int id)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateItem([FromBody] Student student)
+        public async Task<IActionResult> CreateItem([FromBody] Student student)
         {
             if (student == null)
             {
@@ -72,7 +72,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateStudent(int id, [FromBody] Student student)
+        public async Task<IActionResult> UpdateStudent(int id, [FromBody] Student student)
         {
             if (student == null)
             {
@@ -102,7 +102,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteStudent(int id)
+        public async Task<IActionResult> DeleteStudent(int id)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace StudentsApi.Controllers
         }
 
         [HttpGet("search")]
-        public IActionResult SearchStudents([FromQuery] string? course, [FromQuery] int? age, [FromQuery] string? name, [FromQuery] string? email)
+        public async Task<IActionResult> SearchStudents([FromQuery] string? course, [FromQuery] int? age, [FromQuery] string? name, [FromQuery] string? email)
         {
             try
             {
