@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodApi.Tests", "FoodApi.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsApi.Tests", "StudentsApi.Tests\StudentsApi.Tests.csproj", "{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{699AD0C5-0CC2-4B5E-A84D-D3FACD809D19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE9C777A-8CD5-4B89-A8E1-936AE4FADE33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699AD0C5-0CC2-4B5E-A84D-D3FACD809D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699AD0C5-0CC2-4B5E-A84D-D3FACD809D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699AD0C5-0CC2-4B5E-A84D-D3FACD809D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699AD0C5-0CC2-4B5E-A84D-D3FACD809D19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
