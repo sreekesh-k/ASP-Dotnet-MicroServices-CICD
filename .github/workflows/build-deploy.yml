@@ -29,8 +29,7 @@ jobs:
 
       - name: Build Images
         run: |
-            docker-compose up -d
-
+          docker-compose up -d --build
       - name: Integration Testing
         run: |
           dotnet test IntegrationTests/IntegrationTests.csproj
